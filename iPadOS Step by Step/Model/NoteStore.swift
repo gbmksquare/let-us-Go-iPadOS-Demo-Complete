@@ -11,11 +11,12 @@ import os.log
 
 class NoteStore {
     static let shared = NoteStore()
-    
-    static let didUpdate = Notification.Name("NoteStore.didUpdate")
-    
     private let finder = FileManager.default
     
+    // MARK: - Notification
+    static let didUpdate = Notification.Name("NoteStore.didUpdate")
+    
+    // MARK: - Property
     var notes = [Note]()
     
     // MARK: - Initialization
@@ -39,7 +40,6 @@ class NoteStore {
     func addNewNote() {
         let note = Note()
         notes.append(note)
-        
         postDidUpdateNotification()
         
         os_log(.info, log: .default, "NoteStore added a new note, now %{PUBLIC}@ notes", "\(notes.count)")
@@ -59,7 +59,6 @@ class NoteStore {
             try? finder.removeItem(at: url)
         }
         notes.removeAll()
-        
         postDidUpdateNotification()
         
         os_log(.info, log: .default, "NoteStore deleted all notes")

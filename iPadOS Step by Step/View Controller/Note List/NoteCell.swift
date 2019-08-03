@@ -26,16 +26,6 @@ class NoteCell: UICollectionViewCell {
     }
     
     private func setup() {
-//        contentView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView?.translatesAutoresizingMaskIntoConstraints = false
-        
-//        containerView?.layer.masksToBounds = true
-//        containerView?.layer.cornerRadius = 13
-//        containerView?.layer.cornerCurve = .continuous
-        
-//        containerView?.layer.shadowRadius = 13
-//        containerView?.layer.shadowOpacity = 0.25
-//        containerView?.layer.shadowColor = UIColor.black.cgColor
         
     }
     
